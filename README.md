@@ -1,9 +1,9 @@
-#Recipes Web Services
+# Recipes Web Services
 
 The program is a multi-user web service based on Spring Boot that allows storing, retrieving, updating, and deleting recipes.
 
 
-##Endpoints:
+## Endpoints:
 
 * __POST /api/register__ receives a JSON object with two fields: email (string), and password (string).
 Both fields are required and must be valid: email should contain @ and . symbols,
@@ -23,7 +23,7 @@ arrays should have at least one item).
   Search is case-insensitive, sort the recipes by date (newer first).
 * __DELETE /api/recipe/{id}__ deletes a recipe with a specified __id__.
 
-##Examples:
+## Examples:
 
 __POST /api/register__
 
