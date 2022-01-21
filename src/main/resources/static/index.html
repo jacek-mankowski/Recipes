@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes Web Services</title>
+</head>
+<body>
+<h1>Recipes Web Services</h1>
+</br>
+<p>The program is a multi-user web service based on Spring Boot that allows storing, retrieving, updating, and deleting
+    recipes.</p>
+</br>
+<h3><b>Endpoints:</b></h3>
+<blockquote>
+    <ul>
+        <li><b><samp>POST /api/register</samp></b> receives a JSON object with two fields: email (string), and password
+            (string). </br>
+            Both fields are required and must be valid: email should contain @ and . symbols, </br>
+            password should contain at least 8 characters and shouldn't be blank.
+        </li>
+        <li><b><samp>POST /api/recipe/new</samp></b> receives a recipe as a JSON object and returns a JSON object with
+            one <b><samp>id</samp></b> field. </br>
+            This is a uniquely generated number by which we can identify and retrieve a recipe later. </br>
+            All fields are required, string fields can't be blank, arrays should have at least one item.
+        </li>
+        <li><b><samp>PUT /api/recipe/{id}</samp></b> receives a recipe as a JSON object and updates a recipe with a
+            specified <b><samp>id</samp></b>. </br>
+            Also, update the date field too. All fields are required, string fields can't be blank, </br>
+            arrays should have at least one item).
+        </li>
+        <li><b><samp>GET /api/recipe</samp></b> returns all recipes as a JSON object.</li>
+        <li><b><samp>GET /api/recipe/{id}</samp></b> returns a recipe with a specified <b><samp>id</samp></b> as a JSON
+            object.
+        </li>
+        <li><b><samp>GET /api/recipe/search</samp></b> takes one of the two mutually exclusive query parameters:</li>
+        <ul>
+            <li><b><samp>category</samp></b> – if this parameter is specified, it returns a JSON array of all recipes of
+                the specified category. </br>
+                Search is case-insensitive, sort the recipes by date (newer first).
+            </li>
+            <li><b><samp>name</samp></b> – if this parameter is specified, it returns a JSON array of all recipes with
+                the names that contain the specified parameter. </br>
+                Search is case-insensitive, sort the recipes by date (newer first).
+            </li>
+        </ul>
+        <li><b><samp>DELETE /api/recipe/{id}</samp></b> deletes a recipe with a specified <b><samp>id</samp></b>.</li>
+    </ul>
+</blockquote>
+</br>
+<h3><b>Examples:</b></h3>
+<blockquote>
+    <p><b><samp>POST /api/register</samp></b></p>
+    <p>
+    <pre>
+    {
+        "email": "Cook_Programmer@somewhere.com",
+        "password": "RecipeInBinary"
+    }
+    </pre>
+    </p>
+    </br>
+    <p><b><samp>POST /api/recipe/new</samp></b></p>
+    <p>
+    <pre>
+    {
+       "name": "Fresh Mint Tea",
+       "category": "beverage",
+       "description": "Light, aromatic and refreshing beverage, ...",
+       "ingredients": ["boiled water",
+                       "honey",
+                       "fresh mint leaves"],
+       "directions": ["Boil water",
+                      "Pour boiling hot water into a mug",
+                      "Add fresh mint leaves",
+                      "Mix and let the mint leaves seep for 3-5 minutes",
+                      "Add honey and mix again"]
+    }
+    </pre>
+    </p>
+    </br>
+    <p><b><samp>PUT /api/recipe/1</samp></b></p>
+    <p>
+    <pre>
+    {
+       "name": "Warming Ginger Tea",
+       "category": "beverage",
+       "description": "Ginger tea is a warming drink for cool weather, ...",
+       "ingredients": ["1 inch ginger root, minced",
+                       "1/2 lemon, juiced",
+                       "1/2 teaspoon manuka honey"],
+       "directions": ["Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact)",
+                      "Steep for 5-10 minutes",
+                      "Drink and enjoy"]
+    }
+    </pre>
+    </p>
+</blockquote>
+</body>
+</html>

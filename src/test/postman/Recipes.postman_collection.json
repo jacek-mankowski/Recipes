@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "6eae2496-9160-454a-bb05-77ae8a0b9dd0",
+		"name": "Recipes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/register/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"email\": \"ala@aol.com\",\r\n        \"password\": \"recipe12345\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/register/",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipe/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Fresh Mint Tea\",\r\n    \"category\": \"beverage\",\r\n    \"description\": \"Light, aromatic and refreshing beverage, ...\",\r\n    \"ingredients\": [\r\n        \"boiled water\",\r\n        \"honey\",\r\n        \"fresh mint leaves\"\r\n    ],\r\n    \"directions\": [\r\n        \"Boil water\",\r\n        \"Pour boiling hot water into a mug\",\r\n        \"Add fresh mint leaves\",\r\n        \"Mix and let the mint leaves seep for 3-5 minutes\",\r\n        \"Add honey and mix again\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/recipe/new",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"recipe",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipe/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Warming Ginger Tea\",\r\n    \"category\": \"beverage\",\r\n    \"description\": \"Ginger tea is a warming drink for cool weather, ...\",\r\n    \"ingredients\": [\r\n        \"1 inch ginger root, minced\",\r\n        \"1/2 lemon, juiced\",\r\n        \"1/2 teaspoon manuka honey\"\r\n    ],\r\n    \"directions\": [\r\n        \"Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact)\",\r\n        \"Steep for 5-10 minutes\",\r\n        \"Drink and enjoy\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/recipe/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"recipe",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipe/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/recipe/",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"recipe",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipe/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/recipe/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"recipe",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipe/?category=beverage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/recipe/?category=beverage",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"recipe",
+						""
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "beverage"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipe/?name=tea",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/recipe/?name=tea",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"recipe",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "tea"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipe/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/recipe/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"recipe",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "ala@aol.com",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "recipe12345",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
