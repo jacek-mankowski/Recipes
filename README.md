@@ -4,6 +4,7 @@ The program is a multi-user web service based on Spring Boot that allows storing
 
 
 ##Endpoints:
+
 * __POST /api/register__ receives a JSON object with two fields: email (string), and password (string).
 Both fields are required and must be valid: email should contain @ and . symbols,
 password should contain at least 8 characters and shouldn't be blank.
@@ -23,6 +24,7 @@ arrays should have at least one item).
 * __DELETE /api/recipe/{id}__ deletes a recipe with a specified __id__.
 
 ##Examples:
+
 __POST /api/register__
 
     {
